@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E9D882F42286E7AA00AA8DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D882F32286E7AA00AA8DAA /* AppDelegate.swift */; };
-		E9D882F62286E7AA00AA8DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D882F52286E7AA00AA8DAA /* ViewController.swift */; };
+		E9D882F62286E7AA00AA8DAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D882F52286E7AA00AA8DAA /* LoginViewController.swift */; };
 		E9D882F92286E7AA00AA8DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D882F72286E7AA00AA8DAA /* Main.storyboard */; };
 		E9D882FC2286E7AA00AA8DAA /* FireToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D882FA2286E7AA00AA8DAA /* FireToDo.xcdatamodeld */; };
 		E9D882FE2286E7AB00AA8DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D882FD2286E7AB00AA8DAA /* Assets.xcassets */; };
 		E9D883012286E7AB00AA8DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D882FF2286E7AB00AA8DAA /* LaunchScreen.storyboard */; };
 		E9D8830C2286E7AB00AA8DAA /* FireToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8830B2286E7AB00AA8DAA /* FireToDoTests.swift */; };
 		E9D883172286E7AB00AA8DAA /* FireToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D883162286E7AB00AA8DAA /* FireToDoUITests.swift */; };
+		E9D883252287586A00AA8DAA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D883242287586A00AA8DAA /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		E9D882F02286E7AA00AA8DAA /* FireToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D882F32286E7AA00AA8DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9D882F52286E7AA00AA8DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9D882F52286E7AA00AA8DAA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E9D882F82286E7AA00AA8DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9D882FB2286E7AA00AA8DAA /* FireToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FireToDo.xcdatamodel; sourceTree = "<group>"; };
 		E9D882FD2286E7AB00AA8DAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		E9D883122286E7AB00AA8DAA /* FireToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D883162286E7AB00AA8DAA /* FireToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireToDoUITests.swift; sourceTree = "<group>"; };
 		E9D883182286E7AB00AA8DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D883242287586A00AA8DAA /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D882F32286E7AA00AA8DAA /* AppDelegate.swift */,
-				E9D882F52286E7AA00AA8DAA /* ViewController.swift */,
+				E9D88326228758AB00AA8DAA /* Controllers */,
 				E9D882F72286E7AA00AA8DAA /* Main.storyboard */,
 				E9D882FD2286E7AB00AA8DAA /* Assets.xcassets */,
 				E9D882FF2286E7AB00AA8DAA /* LaunchScreen.storyboard */,
@@ -126,6 +128,15 @@
 				E9D883182286E7AB00AA8DAA /* Info.plist */,
 			);
 			path = FireToDoUITests;
+			sourceTree = "<group>";
+		};
+		E9D88326228758AB00AA8DAA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9D882F52286E7AA00AA8DAA /* LoginViewController.swift */,
+				E9D883242287586A00AA8DAA /* TasksViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D882F62286E7AA00AA8DAA /* ViewController.swift in Sources */,
+				E9D882F62286E7AA00AA8DAA /* LoginViewController.swift in Sources */,
+				E9D883252287586A00AA8DAA /* TasksViewController.swift in Sources */,
 				E9D882F42286E7AA00AA8DAA /* AppDelegate.swift in Sources */,
 				E9D882FC2286E7AA00AA8DAA /* FireToDo.xcdatamodeld in Sources */,
 			);
