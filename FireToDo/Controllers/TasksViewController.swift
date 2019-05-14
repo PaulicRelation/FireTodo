@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,5 +25,13 @@ class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDa
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
     }
 
-
+    @IBAction func signOutButtonTapped(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
