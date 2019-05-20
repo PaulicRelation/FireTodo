@@ -10,6 +10,8 @@
 		71B9B5F269FA0F1F3FE52FBC /* Pods_FireToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DCDAA55FDBFDD1D1A80CB5 /* Pods_FireToDo.framework */; };
 		843447BE0408EFD39EFEB220 /* Pods_FireToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44A6CC9C56BE24AA498EF5 /* Pods_FireToDoTests.framework */; };
 		858CD56736A4481DF1922E4E /* Pods_FireToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E78A3E543FF05F854E9B37A /* Pods_FireToDoUITests.framework */; };
+		E9548EDA228AFB8800F29A6D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9548ED9228AFB8800F29A6D /* Task.swift */; };
+		E9548EDC228AFB9300F29A6D /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9548EDB228AFB9300F29A6D /* MyUser.swift */; };
 		E9D882F42286E7AA00AA8DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D882F32286E7AA00AA8DAA /* AppDelegate.swift */; };
 		E9D882F62286E7AA00AA8DAA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D882F52286E7AA00AA8DAA /* LoginViewController.swift */; };
 		E9D882F92286E7AA00AA8DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D882F72286E7AA00AA8DAA /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		C36EF6C9613F1ACD36C4B7C6 /* Pods-FireToDoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireToDoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireToDoUITests/Pods-FireToDoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C437FA15F76CB2D9B015AC14 /* Pods-FireToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireToDoTests/Pods-FireToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C648522E5146BD1009EE3F8B /* Pods-FireToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireToDoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireToDoTests/Pods-FireToDoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9548ED9228AFB8800F29A6D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E9548EDB228AFB9300F29A6D /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
 		E9D882F02286E7AA00AA8DAA /* FireToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D882F32286E7AA00AA8DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9D882F52286E7AA00AA8DAA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E9548EDD228AFBBA00F29A6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9548ED9228AFB8800F29A6D /* Task.swift */,
+				E9548EDB228AFB9300F29A6D /* MyUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E9D882E72286E7AA00AA8DAA = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D882F32286E7AA00AA8DAA /* AppDelegate.swift */,
+				E9548EDD228AFBBA00F29A6D /* Model */,
 				E9D88326228758AB00AA8DAA /* Controllers */,
 				E9D882F72286E7AA00AA8DAA /* Main.storyboard */,
 				E9D882FD2286E7AB00AA8DAA /* Assets.xcassets */,
@@ -421,6 +435,8 @@
 			files = (
 				E9D882F62286E7AA00AA8DAA /* LoginViewController.swift in Sources */,
 				E9D883252287586A00AA8DAA /* TasksViewController.swift in Sources */,
+				E9548EDC228AFB9300F29A6D /* MyUser.swift in Sources */,
+				E9548EDA228AFB8800F29A6D /* Task.swift in Sources */,
 				E9D882F42286E7AA00AA8DAA /* AppDelegate.swift in Sources */,
 				E9D882FC2286E7AA00AA8DAA /* FireToDo.xcdatamodeld in Sources */,
 			);
