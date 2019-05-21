@@ -15,6 +15,8 @@ class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDa
     var ref: DatabaseReference!
     var tasks = Array<Task>()
 
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let currentUser = Auth.auth().currentUser else { return }
@@ -22,17 +24,38 @@ class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDa
         myUser  = MyUser(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(myUser.uid)).child("tasks")
 
+
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        ref.observe(.value, with: { [weak self] (snapshot) in
+
+            var _tasks = Array<Task>()
+
+            for item  in snapshot.children {
+                let task = Task(snapshot: item as! DataSnapshot)
+                _tasks.append(task)
+            }
+
+            self?.tasks = _tasks
+            self?.tableView.reloadData()
+
+        })
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  10
+        return  tasks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.backgroundColor = .clear
-        cell.textLabel?.text  = "Cell #  \(indexPath.row)"
         cell.textLabel?.textColor = .white
+        let taskTitle  = tasks[indexPath.row].title
+        cell.textLabel?.text  = taskTitle
+
         return cell
     }
 
