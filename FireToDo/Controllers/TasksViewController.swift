@@ -24,8 +24,6 @@ class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDa
         myUser  = MyUser(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(myUser.uid)).child("tasks")
 
-
-
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,12 +47,40 @@ class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDa
         return  tasks.count
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            task.ref?.removeValue()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        let task = tasks[indexPath.row]
+        let isCompleted = !task.completed
+        toggleCompletion(cell, isCompleted: isCompleted)
+        task.ref?.updateChildValues(["completed":  isCompleted])
+    }
+
+    func toggleCompletion(_ cell: UITableViewCell, isCompleted: Bool) {
+        cell.accessoryType = isCompleted ? .checkmark : .none
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+
+        let task = tasks[indexPath.row]
+        let taskTitle  = task.title
+        let isCompleted = task.completed
+
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = .white
-        let taskTitle  = tasks[indexPath.row].title
         cell.textLabel?.text  = taskTitle
+        toggleCompletion(cell, isCompleted: isCompleted)
 
         return cell
     }
@@ -66,11 +92,9 @@ class TasksViewController: UIViewController, UITableViewDelegate,  UITableViewDa
 
         let save = UIAlertAction(title: "Save", style: .default) {[weak self] _ in
             guard let textField = alertController.textFields?.first, textField.text != "" else { return }
-
             let task = Task(title: textField.text!, userId: (self?.myUser.uid)!)
-
             let taskRef =  self?.ref.child(task.title.lowercased())
-            // put task to ref
+
             taskRef?.setValue(task.convertToDictionary())
         }
 
